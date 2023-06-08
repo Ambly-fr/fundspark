@@ -1,0 +1,119 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+  }
+  
+  .label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+  
+    text-transform: capitalize;
+  
+    color: #FBFBFB;
+  }
+  
+  .helper {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: capitalize;
+  
+    color: #FBFBFB;
+  }
+  
+  .input-Default {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+      
+    width: 267px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FBFBFB;
+  
+    border: none;
+    border-bottom: 2px solid ;
+    border-image: linear-gradient(to right, #ECDCF5, #AE9EF4,#61B0BC,#a2d4c983,#d6d7e800) 1;
+    border-radius: 0px;
+    background: none;
+    outline: none;
+  }
+  
+  .input-Error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+
+    width: 267px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  
+    border-radius: 0px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #d01414;
+  }
+  
+  .input-Validate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+  
+    width: 267px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  
+    border-radius: 0px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #3fb500;
+  }
+  
+  .input-Default:focus {
+    border-bottom: 2px solid #3c62c2;
+  }
+  
+  .Select .input,
+  .Search .input {
+    width: 301px;
+  }
+  
+  .Multiline textarea {
+    height: 250px;
+    width: 500px;
+    align-items: flex-start !important;
+  }
+  
+  .Error {
+    color: #d01414;
+  }
+  .Validate {
+    color: #3fb500;
+  }
+  
