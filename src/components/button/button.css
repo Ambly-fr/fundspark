@@ -1,0 +1,80 @@
+.button {
+    background: none;
+    color: white;
+    border-radius: 8px;
+    border: 0px solid transparent;
+    font-family: "inter";
+    transition: 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Ajouter ceci */
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    inset: 3px; /* Ajuster ceci pour la taille de la bordure */
+    border-radius: 8px;
+    z-index: -1;
+    background: #1A1A1A;
+  border-radius: 8px;
+  -webkit-mask: linear-gradient(#00000000 0 0) content-box, 
+                linear-gradient(#000000 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  }
+  .button::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      #ecdcf5,
+      #ae9ef4,
+      #61b0bc,
+      #a2d4c983,
+      #d6d7e800
+    );
+    border-radius: 8px;
+    z-index: -3;
+  }
+  
+  .button:hover {
+    background-color: #ffffff15;
+  }
+  .button:active {
+    background-color: #ffffff36;
+  }
+  
+  .XL {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+  
+  .XS {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+  
+.LinkXL {
+  font-size: 18px;
+  border: none;
+  padding: 16px 28px;
+}
+.LinkXL::before{
+    display: none;
+}
+.LinkXL::after{
+    display: none;
+}
+
+.LinkXS {
+  font-size: 16px;
+  border: none;
+  padding: 10px 18px;
+}
+.LinkXS::before{
+    display: none;
+}
+.LinkXS::after{
+    display: none;
+}
