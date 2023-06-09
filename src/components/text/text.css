@@ -1,0 +1,106 @@
+.title {
+  font-family: "Aspekta";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    90.09deg,
+    #ecdcf5 3.44%,
+    #ae9ef4 33.1%,
+    #61b0bc 63.74%,
+    #a2d4c9 82.7%,
+    #d6d7e8 96.8%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.subtitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  background: linear-gradient(
+    90.09deg,
+    #ecdcf5 3.44%,
+    #ae9ef4 33.1%,
+    #61b0bc 63.74%,
+    #a2d4c9 82.7%,
+    #d6d7e8 96.8%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.number {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  color: #fbfbfb;
+}
+
+.supportingtext {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #fbfbfb;
+}
+
+.textmedium {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fbfbfb;
+}
+
+.preheading {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fbfbfb;
+}
+
+.projectname {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fbfbfb;
+}
+
+.corp {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fbfbfb;
+}
+
+.description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fbfbfb;
+}
