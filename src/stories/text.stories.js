@@ -3,7 +3,7 @@ import Text from "../components/text/text";
 
 export default {
     tags: ["autodocs"],
-    title: "Text",
+    title: "Basic/Text",
     component: Text,
     argType:{
         children: {

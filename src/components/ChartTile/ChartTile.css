@@ -1,0 +1,64 @@
+.ChartTile {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+  width: 389.33px;
+  height: 176px;
+  border-radius: 8px;
+  border: none;
+
+}
+.ChartTile::before {
+    content: "";
+    position: absolute;
+    inset: 0px; /* Ajuster ceci pour la taille de la bordure */
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background: linear-gradient(
+      90deg,
+      #ecdcf5,
+      #ae9ef4,
+      #61b0bc,
+      #a2d4c983,
+      #d6d7e800
+    ) border-box;
+    z-index: -1;
+  border-radius: 8px;
+  -webkit-mask: linear-gradient(#ffffff 0 0) padding-box, 
+                linear-gradient(#ffffff 0 0);
+  -webkit-mask-composite: destination-out;
+  
+}
+
+.headlineAndDropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 8px;
+  width: 100%;
+}
+.numberAndChart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+.chart {
+  width: 128px;
+  height: 64px;
+}

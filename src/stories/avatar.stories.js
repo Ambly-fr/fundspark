@@ -3,7 +3,7 @@ import Avatar from "../components/avatar/avatar";
 
 export default {
     tags: ["autodocs"],
-    title: "Avatar",
+    title: "Basic/Avatar",
     component: Avatar,
 };
 

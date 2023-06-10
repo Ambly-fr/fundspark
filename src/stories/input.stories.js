@@ -3,7 +3,7 @@ import Input from "../components/input/input";
 
 export default {
   tags: ["autodocs"],
-  title: "Input",
+  title: "Basic/Input",
   component: Input,
   argTypes: {
     type: {

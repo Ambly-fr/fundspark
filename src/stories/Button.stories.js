@@ -3,7 +3,7 @@ import Button from "../components/button/button";
 
 export default {
     tags: ["autodocs"],
-    title: "Button",
+    title: "Basic/Button",
     component: Button,
     argTypes: {
         type: {
