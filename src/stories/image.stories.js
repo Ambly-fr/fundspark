@@ -3,7 +3,7 @@ import Illustration from "../components/image/image";
 
 export default {
     tags: ["autodocs"],
-    title: "Illustration",
+    title: "Basic/Illustration",
     component: Illustration,
     argTypes: {
         type: {

@@ -6,7 +6,7 @@ import './tags.css'
 export default function Tags({children}) {
   return (
     <div className='tagcontainer'>
-        <Text variant='preheading'>{children}</Text>
+        {children}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import Tags from "../components/tags/tags";
 
 export default {
     tags: ["autodocs"],
-    title: "Tags",
+    title: "Basic/Tags",
     component: Tags,
 };
 

@@ -3,19 +3,38 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: min-content;
+  width: max-content;
   height: min-content;
-  border-radius: 18px;
-  padding: 2px 10px;
-  border-radius: 16px;
-  border: 1px solid transparent;
-  border-image: linear-gradient(
-      to right,
+  position: relative;
+  font-size: 14px;
+  font-family: "inter";
+  font-weight: 500;
+  color: white;
+  padding: 0px 10px;
+  min-width: 10px;
+  min-height: 17px;
+}
+.tagcontainer::before{
+  content: "";
+  top: -2px;
+  left: -2px;
+  right: 0;
+  bottom: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    background: linear-gradient(
+      110deg,
       #ecdcf5,
       #ae9ef4,
       #61b0bc,
-      #a2d4c9,
-      #d6d7e8
-    )
-    1;
+      #a2d4c983,
+      #d6d7e800
+    ) border-box;
+    z-index: -1;
+  -webkit-mask: linear-gradient(#ffffff 0 0) padding-box, 
+                linear-gradient(#ffffff 0 0);
+  -webkit-mask-composite: destination-out;
 }
