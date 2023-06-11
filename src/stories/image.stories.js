@@ -15,21 +15,21 @@ export default {
 
 export const Project ={
     args: {
-        src: "https://picsum.photos/240/384",
+        src: "https://via.placeholder.com/384x240",
         type: "project",
         alt:"project",
     },
 }
 export const Content ={
     args: {
-        src: "https://picsum.photos/1216/400",
+        src: "https://via.placeholder.com/1216x400",
         type: "content",
         alt:"project",
     },
 }
 export const Default ={
     args: {
-        src: "https://picsum.photos/480/720",
+        src: "https://via.placeholder.com/720x480",
         type: "default",
         alt:"project",
     },
