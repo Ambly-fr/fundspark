@@ -1,0 +1,36 @@
+.projectCard{
+    width: 384px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.projectCard__content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.headinfAndText{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.projectCard__footer{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+.projectCard__link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: start;
+}
