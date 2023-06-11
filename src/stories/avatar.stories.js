@@ -9,6 +9,6 @@ export default {
 
 export const AvatarStory = {
     args:{
-        img: "https://picsum.photos/200",
+        img: "https://via.placeholder.com/40",
     }
 }
