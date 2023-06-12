@@ -1,0 +1,72 @@
+.Footer{
+    display: flex;
+    width: 100%;
+    gap:64px;
+    height: max-content;
+    flex-direction: column;
+    padding: 64px 80px;
+}
+
+.containerTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.logoAndLink{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.listLink{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.emailCapture{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+.containerBottom{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: #FAFAFA;
+}
+
+.footerLink{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linkList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+.footerNav{
+    font-family: 'inter';
+    font-size: 12px;
+    font-weight: 400px;
+    text-decoration: none;
+    color: #FAFAFA;
+}
+.footerNav:hover{
+    text-decoration: underline;
+}
