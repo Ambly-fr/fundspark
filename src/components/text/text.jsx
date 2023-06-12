@@ -1,8 +1,8 @@
 import React from 'react'
 import './text.css'
 
-export default function Text({ children, variant }) {
+export default function Text({ onClick, children, variant }) {
   return (
-    <div className={variant}>{children}</div>
+    <div onClick={onClick?onClick:null} style={onClick?{cursor:'pointer'}:null} className={variant}>{children}</div>
   )
 }

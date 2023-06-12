@@ -1,0 +1,26 @@
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.Text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.titlecontainer {
+    border-radius: 5px;
+  width: 100%;
+  transition: .3s ease;
+}
+.titlecontainer:active {
+  background-color: #ffffff36;
+}
