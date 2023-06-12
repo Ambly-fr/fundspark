@@ -1,7 +1,7 @@
 import React from "react";
 import './input.css'
 
-export default function Input({ type, label, helper, status, option }) {
+export default function Input({ type, label, helper, status, option, help }) {
   console.log(option)
   switch (type) {
     default:
@@ -15,7 +15,9 @@ export default function Input({ type, label, helper, status, option }) {
     case "Password":
       return (
         <div className={"inputContainer " + type}>
-          <span className={"label " + status}>{label}</span>
+          {help?  
+          <span className={"label " + status}>{label}</span>: null
+        }
           <input
             className={"input-" + status}
             type="password"
@@ -27,7 +29,9 @@ export default function Input({ type, label, helper, status, option }) {
       case "Multiline":
       return (
         <div className={"inputContainer " + type}>
-          <span className={"label " + status}>{label}</span>
+          {help?  
+          <span className={"label " + status}>{label}</span>: null
+        }
           <textarea
             className={"input-" + status}
             type="text"
@@ -40,7 +44,9 @@ export default function Input({ type, label, helper, status, option }) {
       case "Email":
       return (
         <div className={"inputContainer " + type}>
-          <span className={"label " + status}>{label}</span>
+          {help?  
+          <span className={"label " + status}>{label}</span>: null
+        }
           <input
             className={"input-" + status}
             type="email"
@@ -52,7 +58,9 @@ export default function Input({ type, label, helper, status, option }) {
       case "Search":
       return (
         <div className={"inputContainer " + type}>
-          <span className={"label " + status}>{label}</span>
+          {help?  
+          <span className={"label " + status}>{label}</span>: null
+        }
           <input
             className={"input-" + status}
             type="search"
