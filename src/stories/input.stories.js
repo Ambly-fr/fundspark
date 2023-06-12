@@ -21,6 +21,7 @@ export const singleLine = {
   args: {
     type: "Default",
     status: "Default",
+    help:true,
     label: "Label",
     helper: "This text is an helper",
   },
@@ -30,6 +31,7 @@ export const password = {
   args: {
     type: "Password",
     status: "Default",
+    help:true,
     label: "Password",
     helper: "This text is an helper",
   },
@@ -39,6 +41,7 @@ export const multiline = {
   args: {
     type: "Multiline",
     status: "Default",
+    help:true,
     label: "Multiline",
     helper: "This text is an helper",
   },
@@ -48,6 +51,7 @@ export const email = {
   args: {
     type: "Email",
     status: "Default",
+    help:true,
     label: "Email",
     helper: "This text is an helper",
   },
@@ -57,6 +61,7 @@ export const search = {
     args: {
       type: "Search",
       status: "Default",
+      help:true,
       label: "search",
       helper: "This text is an helper",
     },
