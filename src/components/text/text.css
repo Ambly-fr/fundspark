@@ -68,6 +68,15 @@
   line-height: 28px;
   color: #fbfbfb;
 }
+.metricmedium {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fbfbfb;
+  text-align: left;
+}
 
 .preheading {
   font-family: "Inter";
