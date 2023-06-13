@@ -1,0 +1,13 @@
+.Metric_item{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 384px;
+    align-items: flex-start;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    align-items: flex-start;
+}
