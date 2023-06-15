@@ -1,0 +1,147 @@
+.heroBanner{
+    padding-top: 96px;
+    padding-inline: 224px;
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+    position: relative;
+}
+.heading{
+    display: flex;
+    padding: 0px 32px;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.action{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+.flaire1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0; 
+    animation: fadeIn 4s forwards;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.flaire2{
+    position: absolute;
+    top: -500px;
+    left: -20px;
+    height: 100%;
+    z-index: -1;
+}
+.flaire3{
+    position: absolute;
+    right: -20px;
+    height: 100%;
+    z-index: -1;
+}
+.HeroImage{
+    object-fit: cover;
+}
+.backGrid1{
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    animation: fadeIn 0.5s forwards;
+}
+.backGrid2{
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+.Projectheading{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.featuredProjects{
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+.Metrics{
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 64px;
+}
+.MetricsHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.MetricsCards{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    display: flex;
+    flex-direction: row;
+    gap: 104px;
+    align-items: center;
+}
+
+.Cta{
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+}
+.CtaHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+.FAQ{
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+}
+.FAQHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+.FAQAction{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 480px;
+    width: 100%;
+}
+

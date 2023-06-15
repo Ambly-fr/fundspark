@@ -2,6 +2,7 @@ import React from "react";
 import ProjectCard from "../components/projectCard/projectCard";
 
 export default {
+    tags: ["autodocs"],
     title: "Complex/Project Card",
     component: ProjectCard,
 };

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from "react";
 import Text from "../text/text";
 import Image from "next/image";

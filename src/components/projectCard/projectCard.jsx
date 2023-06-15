@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import "./projectCard.css";
 import Illustration from "../image/image";
