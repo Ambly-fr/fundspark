@@ -9,7 +9,7 @@ export default {
 
 export const MetricStory = {
     args:{
-        number:5000,
+        number:"5000",
         title:'Projets financés',
         supporting:'Plus de 5 000 idées ont trouvé un financement grâce à notre plateforme.',
     }

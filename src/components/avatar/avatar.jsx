@@ -4,6 +4,6 @@ import './avatar.css'
 
 export default function Avatar({img}) {
   return (
-    <Image className='Avatar' width={40} height={40}  src={img}/>
+    <Image className='Avatar' alt='avatar' width={40} height={40}  src={img}/>
   )
 }

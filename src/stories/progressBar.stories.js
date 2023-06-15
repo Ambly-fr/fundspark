@@ -7,7 +7,7 @@ export default {
     component: ProgressBar,
 };
 
-export const progressBar = {
+export const ProgressBarStorie = {
     args: {
         current: 3675,
         total: 5000,

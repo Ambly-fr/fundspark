@@ -17,7 +17,7 @@ export default {
   },
 };
 
-export const singleLine = {
+export const SingleLine = {
   args: {
     type: "Default",
     status: "Default",
@@ -27,7 +27,7 @@ export const singleLine = {
   },
 };
 
-export const password = {
+export const Password = {
   args: {
     type: "Password",
     status: "Default",
@@ -37,7 +37,7 @@ export const password = {
   },
 };
 
-export const multiline = {
+export const Multiline = {
   args: {
     type: "Multiline",
     status: "Default",
@@ -47,7 +47,7 @@ export const multiline = {
   },
 };
 
-export const email = {
+export const Email = {
   args: {
     type: "Email",
     status: "Default",
@@ -57,7 +57,7 @@ export const email = {
   },
 };
 
-export const search = {
+export const Search = {
     args: {
       type: "Search",
       status: "Default",

@@ -4,14 +4,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 8px 80px;
 }
 .logoNavbar{
     display: flex;
     align-items: center;
     flex-direction: row;
-}
-.logo{
-    padding: 10px 18px;
 }
 .navList{
     display: flex;

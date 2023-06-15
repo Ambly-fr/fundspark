@@ -13,25 +13,25 @@ export default {
     },
 };
 
-export const xl ={
+export const Xl ={
     args: {
         type: "XL",
         label: "Primary",
     },
 }
-export const xs ={
+export const Xs ={
     args: {
         type: "XS",
         label: "Primary",
     },
 }
-export const linkXS ={
+export const LinkXS ={
     args: {
         type: "LinkXS",
         label: "Primary",
     },
 }
-export const linkXL ={
+export const LinkXL ={
     args: {
         type: "LinkXL",
         label: "Primary",
