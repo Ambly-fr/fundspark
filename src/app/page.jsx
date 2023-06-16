@@ -8,13 +8,6 @@ import MetricItem from "@/components/metricItem/metricItem";
 import Illustration from "@/components/image/image";
 import Image from "next/image";
 
-import HeroImage from "../assets/heroImage.png";
-import PurpleFLare from "../assets/purpleFlare.png";
-import BlueFLare from "../assets/blueFlare.png";
-import GreenFLare from "../assets/greenFlare.png";
-import BackGrid from "../assets/backGrid.png";
-import Ecodrone from "../assets/unidosh_EcoDrone_vise__dvelopper_des_drones_aliments_par_de_lne_ce780da7-5bdc-4eb3-aee8-04aa6058a6a0.png";
-import CTAImage from "../assets/unidosh_Idea_Coming_to_Life_Un_entrepreneur_travaillant_tard_da_51c7c56d-2289-49cc-9e82-0f89039ff5a9.png";
 import FaqList from "@/components/faqList/faqList";
 
 export default function page() {
@@ -22,15 +15,15 @@ export default function page() {
     <div className={styles.HomePage}>
       <Image
         className={styles.flaire1}
-        src={PurpleFLare}
-        height={609}
-        width={1280}
+        src={"/purpleFlare.png"}
+        height={1887}
+        width={1887}
         alt="Purple Flare"
       />
       <section className={styles.heroBanner}>
         <Image
           className={styles.backGrid1}
-          src={BackGrid}
+          src={"/backGrid.png"}
           height={1235}
           width={1235}
           alt="Back Grid"
@@ -52,7 +45,7 @@ export default function page() {
         </div>
         <Image
           className={styles.HeroImage}
-          src={HeroImage}
+          src={"/heroImage.png"}
           height={640}
           width={1280}
           alt="Hero Image"
@@ -70,7 +63,7 @@ export default function page() {
             category="Technologies vertes"
             date="15 mars 2023"
             description="EcoDrone vise à développer des drones alimentés par de l'énergie solaire pour des applications de surveillance environnementale. "
-            imgSrc={Ecodrone}
+            imgSrc={"/unidosh_EcoDrone_vise__dvelopper_des_drones_aliments_par_de_lne_ce780da7-5bdc-4eb3-aee8-04aa6058a6a0.png"}
             link="https://www.google.com"
             progress={{
               current: 35000,
@@ -90,7 +83,9 @@ export default function page() {
       <section className={styles.Metrics}>
       <Image
         className={styles.flaire2}
-        src={BlueFLare}
+        src={"/blueFlare.png"}
+        height={1887}
+        width={1887}
         alt="Purple Flare"
       />
         <div className={styles.MetricsHeading}>
@@ -132,7 +127,7 @@ export default function page() {
       <section className={styles.Cta}>
       <Image
           className={styles.backGrid2}
-          src={BackGrid}
+          src={"/backGrid.png"}
           height={1235}
           width={1235}
           alt="Back Grid"
@@ -146,12 +141,14 @@ export default function page() {
           <div className={styles.CtaAction}>
             <Button label="Démarrer un projet" type="XL" />
             </div>
-          <Illustration src={CTAImage} type={"content"} alt="CTA Image" />
+          <Illustration src={"/unidosh_Idea_Coming_to_Life_Un_entrepreneur_travaillant_tard_da_51c7c56d-2289-49cc-9e82-0f89039ff5a9.png"} type={"content"} alt="CTA Image" />
       </section>
       <section className={styles.FAQ}>
       <Image
         className={styles.flaire3}
-        src={GreenFLare}
+        height={1887}
+        width={1887}
+        src={"/greenFlare.png"}
         alt="Purple Flare"
       />
         <div className={styles.FAQHeading}>
