@@ -1,0 +1,49 @@
+.explorePage{
+
+}
+.projectExplore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    padding: 94px 100px 150px;
+    position: relative;
+}
+.projectList{
+    width: 100%;
+    gap: 86px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1568px;
+    justify-content: space-between;
+
+}
+.projectheading{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+
+.backGrid2{
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+.Cta{
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+}
+.CtaHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}

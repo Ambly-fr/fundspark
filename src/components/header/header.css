@@ -4,7 +4,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 80px;
+    padding: 18px 80px;
+}
+
+.logo{
+    cursor: pointer;
 }
 .logoNavbar{
     display: flex;
@@ -22,5 +26,20 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 22px;
+    gap: 22px;;
+}
+
+.credentials{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+
+.credentials:hover{
+    cursor: pointer;
+    background-color: #ffffff15;
 }

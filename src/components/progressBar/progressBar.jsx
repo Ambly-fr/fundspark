@@ -19,7 +19,7 @@ export default function ProgressBar({ current, total }) {
   const percent = Math.floor((current / total) * 100);
   return (
     <div className="progressBar">
-      <BorderLinearProgress variant="determinate" value={percent} />
+      <BorderLinearProgress variant="determinate" value={percent>=100?100:percent} />
       <div className="infoContainer">
         <span className="percetage">{percent} %</span>
         <span className="info">

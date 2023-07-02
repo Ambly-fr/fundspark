@@ -1,0 +1,23 @@
+.flaire1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0; 
+    animation: fadeIn 4s forwards;
+}
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+

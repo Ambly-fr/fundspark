@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+}
+.projectCard:hover{
+    cursor: pointer;
+    background-color: #ffffff15;
 }
 
 .projectCard__content{
@@ -20,6 +26,9 @@
     flex-direction: row;
     gap: 12px;
     align-items: center;
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 .projectCard__link{
     display: flex;
@@ -33,4 +42,8 @@
     flex-direction: column;
     gap: 0px;
     justify-content: start;
+}
+.projectCard__footer:hover{
+    cursor: pointer;
+    background-color: #ffffff15;
 }

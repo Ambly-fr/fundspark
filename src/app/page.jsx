@@ -1,7 +1,9 @@
+'use client'
+
 import Button from "@/components/button/button";
 import Text from "@/components/text/text";
 import ProjectCard from "@/components/projectCard/projectCard";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./styles/homePage.module.css";
 import MetricItem from "@/components/metricItem/metricItem";
@@ -9,17 +11,37 @@ import Illustration from "@/components/image/image";
 import Image from "next/image";
 
 import FaqList from "@/components/faqList/faqList";
+import { initializeAuth } from '../services/auth';
+import { useDispatch } from "react-redux";
+import { getFirstThreeProjects, getUserData } from "@/services/database";
 
-export default function page() {
+export default function Page() {
+  const dispatch = useDispatch();
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    initializeAuth(dispatch);
+    async function fetchProjects() {
+      const projectsWithUser = [];
+      const projectsData = await getFirstThreeProjects();
+      for (let project of projectsData) {
+        const userData = await getUserData(project);
+  
+        // Ajoute les données utilisateur au projet
+        project.user = userData;
+  
+        // Ajoute le projet à l'array
+        projectsWithUser.push(project);
+      }
+  
+      // Utilisez setProjects pour mettre à jour l'état avec les nouveaux projets
+      setProjects(projectsWithUser);
+    }
+    fetchProjects();
+  }, [dispatch]);
+
   return (
     <div className={styles.HomePage}>
-      <Image
-        className={styles.flaire1}
-        src={"/purpleFlare.png"}
-        height={1887}
-        width={1887}
-        alt="Purple Flare"
-      />
       <section className={styles.heroBanner}>
         <Image
           className={styles.backGrid1}
@@ -39,8 +61,8 @@ export default function page() {
             </Text>
           </div>
           <div className={styles.action}>
-            <Button label="Explorer les projets" type="LinkXL" />
-            <Button label="Démarrer un projet" type="XL" />
+            <Button label="Explorer les projets" type="LinkXL" link={"/explore"} />
+            <Button label="Démarrer un projet" type="XL" link={"/create"} />
           </div>
         </div>
         <Image
@@ -59,25 +81,29 @@ export default function page() {
           </Text>
         </div>
         <div className={styles.projects}>
-          <ProjectCard
-            category="Technologies vertes"
-            date="15 mars 2023"
-            description="EcoDrone vise à développer des drones alimentés par de l'énergie solaire pour des applications de surveillance environnementale. "
-            imgSrc={"/unidosh_EcoDrone_vise__dvelopper_des_drones_aliments_par_de_lne_ce780da7-5bdc-4eb3-aee8-04aa6058a6a0.png"}
-            link="https://www.google.com"
-            progress={{
-              current: 35000,
-              total: 50000,
-            }}
-            title="EcoDrone"
-            user={{
-              img: "",
-              name: "Jean Dupont",
-            }}
-          />
+        {projects.map(project =>
+        <ProjectCard
+        key={"000"+project.project_title}
+          category={project.category}
+          date="15 mars 2023"
+          description={project.description}
+          imgSrc={project.project_image}
+          link={"/project/"+project.project_id}
+          progress={{
+            current: project.current,
+            total: project.total,
+          }}
+          title={project.project_title}
+          user={{
+            img: project.user.photoURL,
+            name: project.user.displayName,
+            uid: project.user.uid,
+          }}
+        />
+      )}
         </div>
         <div className="ProjectAction">
-          <Button label="Explorer les projets" type="LinkXL" />
+          <Button label="Explorer les projets" type="LinkXL" link={"/explore"} />
         </div>
       </section>
       <section className={styles.Metrics}>
@@ -121,7 +147,7 @@ export default function page() {
           </div>
         </div>
         <div className={styles.MetricsAction}>
-          <Button label="Explorer les projets" type="LinkXL" />
+          <Button label="Explorer les projets" type="LinkXL" link={"/explore"} />
         </div>
       </section>
       <section className={styles.Cta}>
@@ -139,7 +165,7 @@ export default function page() {
           </Text>
           </div>
           <div className={styles.CtaAction}>
-            <Button label="Démarrer un projet" type="XL" />
+            <Button label="Démarrer un projet" type="XL" link={"/create"} />
             </div>
           <Illustration src={"/unidosh_Idea_Coming_to_Life_Un_entrepreneur_travaillant_tard_da_51c7c56d-2289-49cc-9e82-0f89039ff5a9.png"} type={"content"} alt="CTA Image" />
       </section>

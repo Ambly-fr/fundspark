@@ -1,0 +1,15 @@
+.avatar-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  

@@ -19,5 +19,10 @@ export default function Illustration({ src, alt, type }) {
                     <Image className='img' loading='lazy' height={480} width={720} src={src} alt={alt} />
             )
         break;
+        case 'project_Presentation':
+            return(
+                    <Image className='img' loading='lazy' height={516} width={1216} src={src} alt={alt} />
+            )
+        break;
 }
 }
