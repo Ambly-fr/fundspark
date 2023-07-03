@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="fr">
+      <link rel="icon" href="/userdefaultimage.jpg" sizes="any" />
       <body className={inter.className + "" + styles.layout}>
         <ReduxProvider>
         <Image
