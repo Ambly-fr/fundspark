@@ -1,0 +1,47 @@
+.contact {
+  display: flex;
+  padding: 96px 80px;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  width: 650px;
+}
+
+.FAQ {
+  padding: 150px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  position: relative;
+}
+.FAQHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.FAQAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 480px;
+  width: 100%;
+}

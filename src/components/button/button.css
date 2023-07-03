@@ -6,7 +6,17 @@
     font-family: "inter";
     transition: 0.2s ease-in-out;
     position: relative;
+    min-width: max-content;
     overflow: hidden; /* Ajouter ceci */
+  }
+
+  .button-link{
+    color: white;
+    font-family: "inter";
+    padding: 0 !important;
+    text-decoration: none;
+    font-weight: 500;
+    width: max-content;
   }
   
   .button::before {
@@ -25,9 +35,9 @@
     ) border-box;
     z-index: -1;
   border-radius: 8px;
-  -webkit-mask: linear-gradient(#ffffff 0 0) padding-box, 
+  mask: linear-gradient(#ffffff 0 0) padding-box, 
                 linear-gradient(#ffffff 0 0);
-  -webkit-mask-composite: destination-out;
+  mask-composite: destination-out;
   }
   .button::after{
     content: "";
@@ -59,6 +69,12 @@
   font-size: 18px;
   border: none;
   padding: 16px 28px;
+}
+
+.Error{
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff2424;
 }
 .LinkXL::before{
     display: none;

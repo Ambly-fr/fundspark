@@ -1,0 +1,30 @@
+.signInPage{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    display: flex;
+    padding: 96px 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+  }
+  
+  .connexionHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  
+  .signForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    align-self: stretch;
+    width: 360px;
+  }

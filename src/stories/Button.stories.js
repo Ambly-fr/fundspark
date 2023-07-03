@@ -17,23 +17,27 @@ export const Xl ={
     args: {
         type: "XL",
         label: "Primary",
+        link:'/',
     },
 }
 export const Xs ={
     args: {
         type: "XS",
         label: "Primary",
+        link:'/',
     },
 }
 export const LinkXS ={
     args: {
         type: "LinkXS",
         label: "Primary",
+        link:'/',
     },
 }
 export const LinkXL ={
     args: {
         type: "LinkXL",
         label: "Primary",
+        link:'/',
     },
 }

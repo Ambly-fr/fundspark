@@ -8,6 +8,7 @@ import ProgressBar from "../progressBar/progressBar";
 import Avatar from "../avatar/avatar";
 import Image from "next/image";
 import Arrow from "../../assets/arrowAngle.svg";
+import { useRouter } from "next/navigation";
 
 export default function ProjectCard({
   title,
@@ -19,8 +20,10 @@ export default function ProjectCard({
   user,
   date,
 }) {
+  const router = useRouter();
+
   return (
-    <div className="projectCard" href={link}>
+    <div className="projectCard" onClick={()=>{router.push(link)}}>
       <div className="projectCard__image">
         <Illustration src={imgSrc} alt={"test"} type={"project"} />
       </div>
@@ -37,7 +40,7 @@ export default function ProjectCard({
       <ProgressBar current={progress.current} total={progress.total} />
       <div className="projectCard__footer">
         <Avatar img={user.img} alt={user.name} />
-        <div className="userInfo">
+        <div className="userInfo" onClick={()=>{router.push("/user/"+user.uid)}}>
           <Text variant={"preheading"}>{user.name}</Text>
           <Text variant={"date"}>{date}</Text>
         </div>
