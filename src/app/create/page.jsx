@@ -15,14 +15,14 @@ import TagsInput from "@/components/tagInput/tagInput";
 import { useRouter } from "next/navigation";
 
 const Step1 = ({ setStep, projectData, setProjectData }) => (
-    <div className={styles.create}>
+    <div className={styles?.create}>
       <Text variant="projectname">Créer un projet</Text>
       <Input
         helper="This text is an helper"
         label="Titre du projet"
         status="Default"
         type="Default"
-        value={projectData.project_title}
+        value={projectData?.project_title}
         onChange={(e) =>
           setProjectData({ ...projectData, project_title: e.target.value })
         }
@@ -30,7 +30,7 @@ const Step1 = ({ setStep, projectData, setProjectData }) => (
       <TagsInput
         helper="This text is an helper"
         label="Catégorie du projet"
-        value={projectData.category}
+        value={projectData?.category}
         onChange={(newCategory) =>
           setProjectData({ ...projectData, category: newCategory })
         }
@@ -40,9 +40,9 @@ const Step1 = ({ setStep, projectData, setProjectData }) => (
         label="Somme attendue"
         status="Default"
         type="number"
-        value={projectData.total}
+        value={projectData?.total}
         onChange={(e) =>
-          setProjectData({ ...projectData, total: e.target.value })
+          setProjectData({ ...projectData, total: e?.target?.value })
         }
       />
       <Input
@@ -50,9 +50,9 @@ const Step1 = ({ setStep, projectData, setProjectData }) => (
         label="Date de fin"
         status="Default"
         type="date"
-        value={projectData.end_date}
+        value={projectData?.end_date}
         onChange={(e) =>
-          setProjectData({ ...projectData, end_date: e.target.value })
+          setProjectData({ ...projectData, end_date: e?.target?.value })
         }
       />
       {/* Vous pouvez ajouter plus de champs ici si nécessaire */}
@@ -66,7 +66,7 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
     const [projectImage, setProjectImage] = useState(null);
   
     const handleProjectImageChange = (e) => {
-      const file = e.target.files[0];
+      const file = e?.target?.files[0];
       setProjectImage(file);
     }
   
@@ -89,16 +89,16 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
     }
   
     return (
-      <div className={styles.create}>
+      <div className={styles?.create}>
         <Text variant="projectname">Créer un projet</Text>
         <Input
           helper="This text is an helper"
           label="Description du projet"
           status="Default"
           type="Multiline"
-          value={projectData.description}
+          value={projectData?.description}
           onChange={(e) =>
-            setProjectData({ ...projectData, description: e.target.value })
+            setProjectData({ ...projectData, description: e?.target?.value })
           }
         />
         {/* Ajout de l'entrée pour l'image du projet */}
@@ -119,23 +119,23 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
   
 
 const Step3 = ({ setStep, projectData, setProjectData }) => (
-  <div className={styles.create}>
+  <div className={styles?.create}>
     <Text variant="projectname">Créer un projet</Text>
     <Text variant="projectname">Ajouter des sections pour votre projet</Text>
     {projectData.content.titles.map((_, index) => (
-      <div className={styles.section} key={index}>
+      <div className={styles?.section} key={index}>
         <Input
           helper="This text is an helper"
           label="Titre de la section"
           status="Default"
           type="Default"
-          value={projectData.content.titles[index]}
+          value={projectData?.content?.titles[index]}
           onChange={(event) => {
-            const newTitles = [...projectData.content.titles];
-            newTitles[index] = event.target.value;
+            const newTitles = [...projectData?.content?.titles];
+            newTitles[index] = event?.target?.value;
             setProjectData({
               ...projectData,
-              content: { ...projectData.content, titles: newTitles },
+              content: { ...projectData?.content, titles: newTitles },
             });
           }}
         />
@@ -144,13 +144,13 @@ const Step3 = ({ setStep, projectData, setProjectData }) => (
           label="Corp de la section"
           status="Default"
           type="Multiline"
-          value={projectData.content.bodies[index]}
+          value={projectData?.content?.bodies[index]}
           onChange={(event) => {
-            const newBodies = [...projectData.content.bodies];
-            newBodies[index] = event.target.value;
+            const newBodies = [...projectData?.content?.bodies];
+            newBodies[index] = event?.target?.value;
             setProjectData({
               ...projectData,
-              content: { ...projectData.content, bodies: newBodies },
+              content: { ...projectData?.content, bodies: newBodies },
             });
           }}
         />
@@ -161,11 +161,11 @@ const Step3 = ({ setStep, projectData, setProjectData }) => (
           type="File"
           accept="image/*"
           onChange={(event) => {
-            const newImages = [...projectData.content.images];
-            newImages[index] = event.target.files[0];
+            const newImages = [...projectData?.content?.images];
+            newImages[index] = event?.target?.files[0];
             setProjectData({
               ...projectData,
-              content: { ...projectData.content, images: newImages },
+              content: { ...projectData?.content, images: newImages },
             });
           }}
         />
@@ -178,10 +178,10 @@ const Step3 = ({ setStep, projectData, setProjectData }) => (
         setProjectData({
           ...projectData,
           content: {
-            ...projectData.content,
-            titles: [...projectData.content.titles, ""],
-            bodies: [...projectData.content.bodies, ""],
-            images: [...projectData.content.images, ""],
+            ...projectData?.content,
+            titles: [...projectData?.content?.titles, ""],
+            bodies: [...projectData?.content?.bodies, ""],
+            images: [...projectData?.content?.images, ""],
           },
         });
       }}
@@ -193,14 +193,14 @@ const Step3 = ({ setStep, projectData, setProjectData }) => (
 
 const FinalStep = ({ setStep, projectData }) => {
     const router = useRouter();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state?.user);
   async function handleSubmit() {
     try {
-      const downloadUrls = await Promise.all(
-        projectData.content.images.map(async (imageFile) => {
+      const downloadUrls = await Promise?.all(
+        projectData?.content?.images?.map(async (imageFile) => {
           const snapshot = await uploadFile(imageFile); // Upload le fichier
           // Récupérer l'URL de téléchargement
-          const downloadUrl = await getDownloadURL(snapshot.ref);
+          const downloadUrl = await getDownloadURL(snapshot?.ref);
 
           return downloadUrl;
         })
@@ -209,13 +209,13 @@ const FinalStep = ({ setStep, projectData }) => {
       await createProject(
         {
           ...projectData,
-          content: { ...projectData.content, images: downloadUrls },
+          content: { ...projectData?.content, images: downloadUrls },
         },
         user.value.uid
       );
       setStep(4);
       console.log("Projet créé avec succès");
-      router.push("/explore");
+      router?.push("/explore");
     } catch (error) {
       console.error(
         "Une erreur s'est produite lors du téléchargement des fichiers",
@@ -225,19 +225,16 @@ const FinalStep = ({ setStep, projectData }) => {
   }
 
   return (
-    <div className={styles.create}>
+    <div className={styles?.create}>
       <Button type={"XS"} label={"Soumettre le projet"} onClick={handleSubmit}/>
     </div>
   );
 };
 
-const MultiStepForm = () => {
-    const user = useSelector((state) => state.user); 
-  const signed = Boolean(user.value);
+const Page = () => {
+    const user = useSelector((state) => state?.user); 
+  const signed = Boolean(user?.value);
   const router = useRouter();
-  if (!signed) {
-    router.push("/signin");
-  }
   const dispatch = useDispatch();
   useEffect(() => {
     initializeAuth(dispatch);
@@ -281,4 +278,4 @@ const MultiStepForm = () => {
   }
 };
 
-export default MultiStepForm;
+export default Page;
