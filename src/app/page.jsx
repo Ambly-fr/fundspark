@@ -27,14 +27,11 @@ export default function Page() {
       for (let project of projectsData) {
         const userData = await getUserData(project);
   
-        // Ajoute les données utilisateur au projet
         project.user = userData;
   
-        // Ajoute le projet à l'array
         projectsWithUser.push(project);
       }
   
-      // Utilisez setProjects pour mettre à jour l'état avec les nouveaux projets
       setProjects(projectsWithUser);
     }
     fetchProjects();

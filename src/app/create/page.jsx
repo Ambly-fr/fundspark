@@ -73,12 +73,10 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
     const handleNext = async () => {
       if (projectImage) {
         try {
-          const snapshot = await uploadFile(projectImage); // Upload le fichier
+          const snapshot = await uploadFile(projectImage);
   
-          // Récupérer l'URL de téléchargement
           const downloadUrl = await getDownloadURL(snapshot.ref);
   
-          // Sauvegarder l'URL de téléchargement dans projectData
           setProjectData({ ...projectData, project_image: downloadUrl });
         } catch (error) {
           console.error("Une erreur s'est produite lors du téléchargement du fichier", error);
@@ -101,7 +99,6 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
             setProjectData({ ...projectData, description: e?.target?.value })
           }
         />
-        {/* Ajout de l'entrée pour l'image du projet */}
         <Input
           helper="This text is an helper"
           label="Image du projet"
@@ -110,7 +107,6 @@ const Step2 = ({ setStep, projectData, setProjectData }) => {
           accept="image/*"
           onChange={handleProjectImageChange}
         />
-        {/* Vous pouvez ajouter plus de champs ici si nécessaire */}
         <Button type={"XS"} label={"Précédent"} onClick={() => setStep(1)} />
         <Button type={"XS"} label={"Suivant"} onClick={handleNext} />
       </div>
@@ -198,14 +194,12 @@ const FinalStep = ({ setStep, projectData }) => {
     try {
       const downloadUrls = await Promise?.all(
         projectData?.content?.images?.map(async (imageFile) => {
-          const snapshot = await uploadFile(imageFile); // Upload le fichier
-          // Récupérer l'URL de téléchargement
+          const snapshot = await uploadFile(imageFile);
           const downloadUrl = await getDownloadURL(snapshot?.ref);
 
           return downloadUrl;
         })
       );
-      // Sauvegarder les URL de téléchargement dans Firestore
       await createProject(
         {
           ...projectData,

@@ -28,7 +28,6 @@ export default function Page({ params }) {
 
   useEffect(() => {
     initializeAuth(dispatch);
-    // C'est une fonction auto-appelée car useEffect ne peut pas directement retourner une fonction asynchrone
     (async () => {
       try {
         const proj = await getProjectById(id);
@@ -144,6 +143,7 @@ export default function Page({ params }) {
                 type="default"
                 src={project.content.images[index]}
                 alt={title}
+                placeholder="blur"
               />
             )}
           </div>

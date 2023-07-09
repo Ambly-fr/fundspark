@@ -81,7 +81,6 @@ async function getUserData(project) {
 async function createProject(formData, userId) {
   const db = getFirestore();
 
-  // Création d'une référence vers l'utilisateur spécifié
   const userRef = doc(db, "users", userId);
 
   const newProjectData = {
@@ -94,7 +93,6 @@ async function createProject(formData, userId) {
   const projectsRef = collection(db, "projects");
   const newProjectRef = await addDoc(projectsRef, newProjectData);
 
-  // Ajout de l'ID du projet au document lui-même
   await updateDoc(newProjectRef, { project_id: newProjectRef.id });
 
   return newProjectRef.id;
@@ -103,10 +101,8 @@ async function createProject(formData, userId) {
 async function updateProject(projectId, contribution) {
   const db = getFirestore();
 
-  // référence vers le document du projet
   const projectRef = doc(db, "projects", projectId);
 
-  // mise à jour du document du projet
   await updateDoc(projectRef, {
     current: increment(contribution.amount),
     contributors: arrayUnion({
@@ -132,7 +128,6 @@ async function getFirstThreeProjects() {
 async function getUserStats(userId) {
     const db = getFirestore();
   
-    // Récupérer tous les projets
     const projectsQuery = collection(db, "projects");
     const projectsSnapshot = await getDocs(projectsQuery);
     
@@ -142,14 +137,12 @@ async function getUserStats(userId) {
     let createdProjectsCount = 0;
   
     projects.forEach(project => {
-      // Vérifier si l'utilisateur est dans la liste des contributeurs
       project.contributors.forEach(contributor => {
         if (contributor.uid === userId) {
             contributionsCount += 1;
         }
         });
       
-      // Vérifier si l'utilisateur est le créateur du projet
       if (project.user.id === userId) {
         createdProjectsCount += 1;
       }
