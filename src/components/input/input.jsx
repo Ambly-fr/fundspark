@@ -112,5 +112,19 @@ export default function Input({
           <span className={"helper " + status}>{helper}</span>
         </div>
       );
+      case "Number":
+      return (
+        <div className={"inputContainer " + type}>
+          <span className={"label " + status}>{label}</span>
+          <input
+            className={"input-" + status}
+            type="number"
+            value={value}
+            defaultValue={0}
+            onChange={onChange}
+          ></input>
+          <span className={"helper " + status}>{helper}</span>
+        </div>
+      );
   }
 }
