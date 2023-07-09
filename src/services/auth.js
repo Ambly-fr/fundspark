@@ -1,4 +1,3 @@
-// services/auth.js
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -74,15 +73,12 @@ async function loginWithGoogle(dispatch) {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
 
-    // Vérifier si l'utilisateur existe déjà dans Firestore
     const userDoc = doc(collection(db, "users"), user.uid);
     const docSnap = await getDoc(userDoc);
 
     if (!docSnap.exists()) {
-      // Si l'utilisateur n'existe pas, créer un document pour lui
       await setDoc(userDoc, {
         displayName: user.displayName,
-        // Ajoutez ici toutes les autres informations que vous voulez stocker
       });
     }
 
@@ -95,10 +91,8 @@ async function loginWithGoogle(dispatch) {
 export function initializeAuth(dispatch) {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, dispatch action to Redux
       dispatch(reduxLogin(user));
     } else {
-      // User is signed out, dispatch action to Redux
       dispatch(reduxLogout());
     }
   });

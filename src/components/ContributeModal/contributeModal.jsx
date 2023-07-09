@@ -18,7 +18,6 @@ function ContributionModal({
   const handleContribute = async (e) => {
     e.preventDefault();
 
-    // Mise à jour du projet avec la nouvelle contribution
     await updateProject(projectId, {
       username: username,
       userId: userId,
@@ -26,14 +25,12 @@ function ContributionModal({
       avatar: avatar,
     });
 
-    // Fermeture de la modal
     onClose();
   };
 
   const handleContentClick = (e) => {
-    // Empêche les clics sur le contenu de la modale de fermer la modale.
     e.stopPropagation();
-  }
+  };
 
   if (!isOpen) {
     return null;

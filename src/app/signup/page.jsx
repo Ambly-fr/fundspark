@@ -40,7 +40,7 @@ export default function SignUpPage() {
 
     try {
       await register(dispatch, email, password, username);
-      router.push('/'); // redirige vers la page d'accueil après la création du compte
+      router.push('/');
     } catch (error) {
       setCredentialsError(true);
     }

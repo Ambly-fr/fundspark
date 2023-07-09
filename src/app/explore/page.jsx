@@ -29,21 +29,16 @@ export default function Page() {
     try{
       const projects = await getAllProjects();
   
-      // Créer un nouvel tableau pour stocker les projets avec les données utilisateur
       const projectsWithUser = [];
   
-      // Pour chaque projet, obtenir les données utilisateur et ajouter le projet à l'array
       for (let project of projects) {
         const userData = await getUserData(project);
   
-        // Ajoute les données utilisateur au projet
         project.user = userData;
   
-        // Ajoute le projet à l'array
         projectsWithUser.push(project);
       }
   
-      // Utilisez setProjects pour mettre à jour l'état avec les nouveaux projets
       setProjects(projectsWithUser);
   
     } catch (error) {

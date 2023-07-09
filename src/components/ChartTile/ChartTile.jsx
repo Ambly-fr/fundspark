@@ -13,17 +13,14 @@ import {
 import gradient from "chartjs-plugin-gradient";
 import Text from "../text/text";
 import "./ChartTile.css";
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-
-//import arrow svg as react component
 import Up from "./arrowIcon.svg";
 import Down from "../../assets/arrowDown.svg";
 import Image from "next/image";
-
 
 Chart.register(
   CategoryScale,
@@ -36,7 +33,7 @@ Chart.register(
   Tooltip
 );
 
-const ChartComponent = ({ title, data, variation, chartData,arrow }) => {
+const ChartComponent = ({ title, data, variation, chartData, arrow }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -102,7 +99,7 @@ const ChartComponent = ({ title, data, variation, chartData,arrow }) => {
       <div className="headlineAndDropdown">
         <Text variant="projectname">{title}</Text>
         <IconButton onClick={handleClick}>
-          <MoreVertIcon style={{color:"white"}} />
+          <MoreVertIcon style={{ color: "white" }} />
         </IconButton>
         <Menu
           id="simple-menu"
@@ -119,8 +116,11 @@ const ChartComponent = ({ title, data, variation, chartData,arrow }) => {
       <div className="numberAndChart">
         <div className="data">
           <Text variant={"number"}>{data}</Text>
-          
-          <Text variant={"preheading"}><Image width={15} height={15} alt="arrow" src={arrow?Up:Down}/>  {variation} vs last month</Text>
+
+          <Text variant={"preheading"}>
+            <Image width={15} height={15} alt="arrow" src={arrow ? Up : Down} />{" "}
+            {variation} vs last month
+          </Text>
         </div>
         <div className="chart">
           <Line data={chartOptions} options={options} />
