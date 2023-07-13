@@ -17,7 +17,6 @@ export default function Header() {
   const user = useSelector((state) => state.user); 
   const signed = Boolean(user.value);
   const avatarImg = user?.value?.photoURL;
-  console.log(user);
   return (
     <div className="header">
       <div className="logoNavbar">

@@ -208,7 +208,6 @@ const FinalStep = ({ setStep, projectData }) => {
         user.value.uid
       );
       setStep(4);
-      console.log("Projet créé avec succès");
       router?.push("/explore");
     } catch (error) {
       console.error(

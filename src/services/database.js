@@ -15,13 +15,19 @@ import {
 
 async function getProjectsByUserId(uid) {
   const db = getFirestore();
+
+  const userRef = doc(db, "users", uid);
+  const userSnap = await getDoc(userRef);
+  if (!userSnap.exists()) {
+    throw new Error("User does not exist!");
+  }
+
   const projectsRef = collection(db, "projects");
-  const q = query(projectsRef, where("userId", "==", uid));
+  const q = query(projectsRef, where("user", "==", userRef));
 
   const querySnapshot = await getDocs(q);
   let projects = [];
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
     projects.push(doc.data());
   });
 
@@ -35,7 +41,6 @@ async function getAllProjects() {
   const querySnapshot = await getDocs(projectsRef);
   let projects = [];
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
     projects.push(doc.data());
   });
 
@@ -74,8 +79,17 @@ async function getUserData(project) {
   const userDoc = await getDoc(userRef);
 
   const userData = userDoc.data();
-
+  
   return userData;
+}
+
+async function getUserDataById(userId) {
+  const db = getFirestore();
+
+  const userDoc = doc(db, "users", userId);
+  const userData = await getDoc(userDoc);
+
+  return userData.data();
 }
 
 async function createProject(formData, userId) {
@@ -119,41 +133,40 @@ async function getFirstThreeProjects() {
 
   const projectsQuery = query(collection(db, "projects"), limit(3));
   const projectSnapshot = await getDocs(projectsQuery);
-  
-  const projects = projectSnapshot.docs.map(doc => doc.data());
-  
+
+  const projects = projectSnapshot.docs.map((doc) => doc.data());
+
   return projects;
 }
 
 async function getUserStats(userId) {
-    const db = getFirestore();
-  
-    const projectsQuery = collection(db, "projects");
-    const projectsSnapshot = await getDocs(projectsQuery);
-    
-    const projects = projectsSnapshot.docs.map(doc => doc.data());
-  
-    let contributionsCount = 0;
-    let createdProjectsCount = 0;
-  
-    projects.forEach(project => {
-      project.contributors.forEach(contributor => {
-        if (contributor.uid === userId) {
-            contributionsCount += 1;
-        }
-        });
-      
-      if (project.user.id === userId) {
-        createdProjectsCount += 1;
+  const db = getFirestore();
+
+  const projectsQuery = collection(db, "projects");
+  const projectsSnapshot = await getDocs(projectsQuery);
+
+  const projects = projectsSnapshot.docs.map((doc) => doc.data());
+
+  let contributionsCount = 0;
+  let createdProjectsCount = 0;
+
+  projects.forEach((project) => {
+    project.contributors.forEach((contributor) => {
+      if (contributor.uid === userId) {
+        contributionsCount += 1;
       }
     });
-  
-    return {
-      contributionsCount,
-      createdProjectsCount
-    };
-  }
 
+    if (project.user.id === userId) {
+      createdProjectsCount += 1;
+    }
+  });
+
+  return {
+    contributionsCount,
+    createdProjectsCount,
+  };
+}
 
 export {
   getProjectsByUserId,
@@ -164,5 +177,6 @@ export {
   createProject,
   getUserById,
   getUserStats,
-  getFirstThreeProjects
+  getFirstThreeProjects,
+  getUserDataById,
 };

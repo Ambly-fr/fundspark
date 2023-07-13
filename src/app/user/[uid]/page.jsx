@@ -9,20 +9,26 @@ import { initializeAuth, logout } from "@/services/auth";
 import ProjectCard from "@/components/projectCard/projectCard";
 import Button from "@/components/button/button";
 import { useRouter } from "next/navigation";
-import { getAllProjects, getUserData } from "@/services/database";
+import { getProjectsByUserId, getUserData, getUserDataById, getUserStats } from "@/services/database";
 
 export default function Page({ params }) {
+  const [userStats, setUserStats] = useState({
+    contributionsCount: 0,
+    createdProjectsCount: 0,
+  });
   const [projects, setProjects] = useState([]);
   const dispatch = useDispatch();
+  const userID = params.uid;
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     initializeAuth(dispatch);
-    handleGetAllProjects();
-  }, [dispatch]);
+    handleGetAllProjects(userID);
+  }, [dispatch, userID]);
 
-  const handleGetAllProjects = async () => {
+  const handleGetAllProjects = async (userID) => {
     try {
-      const projects = await getAllProjects();
+      const projects = await getProjectsByUserId(userID);
 
       const projectsWithUser = [];
 
@@ -43,6 +49,12 @@ export default function Page({ params }) {
   const user = useSelector((state) => state.user);
   const router = useRouter();
 
+  useEffect(() => {
+    if (userID) {
+      getUserStats(userID).then(setUserStats);
+      getUserDataById(userID).then(setUserData);
+    }
+  }, [userID]);
 
   return (
     <div className={styles.userPage}>
@@ -50,28 +62,24 @@ export default function Page({ params }) {
         <div className={styles.userProfileHeading}>
           <div className={styles.userProfileImage}>
             <Image
-              src={user?.value?.photoURL}
+              src={userData?.photoURL}
               width={200}
               height={200}
               alt="user profile image"
             />
           </div>
           <div className={styles.userProfileText}>
-            <Text variant="title">{user?.value?.displayName}</Text>
+            <Text variant="title">{userData?.displayName}</Text>
             <Text variant="supportingtext">User Bio</Text>
           </div>
           <div className={styles.userProfileStats}>
             <div className={styles.userProfileStat}>
               <Text variant="supportingtext">Projets</Text>
-              <Text variant="title">0</Text>
+              <Text variant="title">{userStats.createdProjectsCount}</Text>
             </div>
             <div className={styles.userProfileStat}>
               <Text variant="supportingtext">Contributions</Text>
-              <Text variant="title">0</Text>
-            </div>
-            <div className={styles.userProfileStat}>
-              <Text variant="supportingtext">Abonnés</Text>
-              <Text variant="title">0</Text>
+              <Text variant="title">{userStats.contributionsCount}</Text>
             </div>
           </div>
         </div>

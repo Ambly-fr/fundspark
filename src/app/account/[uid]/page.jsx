@@ -9,23 +9,24 @@ import { initializeAuth, logout } from "@/services/auth";
 import ProjectCard from "@/components/projectCard/projectCard";
 import Button from "@/components/button/button";
 import { useRouter } from "next/navigation";
-import { getAllProjects, getUserData, getUserStats } from "@/services/database";
+import { getProjectsByUserId, getUserData, getUserStats } from "@/services/database";
 
 export default function Page({ params }) {
   const [userStats, setUserStats] = useState({ contributionsCount: 0, createdProjectsCount: 0 });
   const [projects, setProjects] = useState([]);
   const dispatch = useDispatch();
+  const userID = params.uid;
 
   useEffect(() => {
     initializeAuth(dispatch);
-    handleGetAllProjects();
-  }, [dispatch]);
+    handleGetAllProjects(userID);
+  }, [dispatch,userID]);
 
   
 
-  const handleGetAllProjects = async () => {
+  const handleGetAllProjects = async (userID) => {
     try{
-      const projects = await getAllProjects();
+      const projects = await getProjectsByUserId(userID);
   
       const projectsWithUser = [];
   

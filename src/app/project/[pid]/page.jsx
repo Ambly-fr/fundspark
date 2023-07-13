@@ -34,7 +34,6 @@ export default function Page({ params }) {
         const userData = await getUserData(proj);
 
         proj.user = userData;
-        console.log(proj);
 
         setProject(proj);
       } catch (error) {
@@ -119,7 +118,6 @@ export default function Page({ params }) {
                     const userData = await getUserData(proj);
 
                     proj.user = userData;
-                    console.log(proj);
 
                     setProject(proj);
                   } catch (error) {
